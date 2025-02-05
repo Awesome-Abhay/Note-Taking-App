@@ -15,38 +15,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-// document.querySelector("nav .profile img").addEventListener('click', () => {
-//     document.getElementById("logoutDialog").style.display = "block";
-// });
-
-// document.getElementById("closeDialog").addEventListener('click', () => {
-//     document.getElementById("logoutDialog").style.display = "none";
-// });
-
-// document.getElementById("logoutButton").addEventListener('click', () => {
-//     auth.signOut().then(() => {
-//         window.location.href = "/qixer"; // Redirect to login page
-//     }).catch((error) => {
-//         console.error("Logout error:", error);
-//     });
-// });
-
-// Close the dialog if the user clicks outside of it
-// window.onclick = function(event) {
-//     const dialog = document.getElementById("logoutDialog");
-//     if (event.target != document.querySelector("nav .profile img")) {
-//         dialog.style.display = "none";
-//     }
-// };
-
+document.getElementsByClassName("danger")[0].addEventListener('click', () => {
+    auth.signOut().then(() => {
+        window.location.href = "/"; // Redirect to login page
+    }).catch((error) => {
+        console.error("Logout error:", error);
+    });
+});
 
 
 async function updateUserProfile(user){
 
-    // const userName= user.displayName;
-    // const userEmail= user.email;
+    const userName= user.displayName;
     const userProfilePicture= await user.photoURL;            
     document.querySelector(".user img").src= userProfilePicture;
+    document.querySelector(".user h3").textContent= userName;
 }
 
 onAuthStateChanged(auth, (user)=>{
