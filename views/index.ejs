@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+        }
+        .whole{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+        }
+        aside{
+            width: 20%;
+            height: 100%;
+            border: 2px solid black;
+        }
+        aside > div:first-child{
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            height: 10%;
+            border: 2px solid black;
+        }
+        aside div:first-child img{
+            width: 30px;
+            height: 30px;
+        }
+        aside > div:nth-child(2){
+            padding: 20px 0px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        aside div:nth-child(2) div{
+            width: 90%;
+            height: 50px;
+            padding-left: 20px;
+            align-items: center;
+            display: flex;
+            border: 1px solid black;
+            border-radius: 20px;
+            gap: 10px;
+        }
+        aside div:nth-child(2) img{
+            width: 20px;
+            height: 20px;
+        }
+        aside> div:last-child{
+            width: 100%;
+            position: relative;
+            bottom: 0px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            height: 10%;
+            border: 2px solid black;
+            gap: 5px;
+        }
+        aside> div:last-child img{
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+    <script src="js/update.js" defer type="module"></script>
+</head>
+<body>
+    <div class="whole">
+        <aside>
+            <div> 
+                <img src="svgs/note.svg" alt="">
+                <h1>AI Notes</h1>
+            </div>
+            <div>
+                <div>
+                    <img src="svgs/home.svg" alt="">
+                    <h3>Home</h3>
+                </div>
+                <div>
+                    <img src="svgs/favourite.svg" alt="">
+                    <h3>Favourite</h3>
+                </div>
+            </div>
+            <div class="user">
+                <img src="svgs/profile.svg" alt="">
+                <h3>Emmanuel Vincent</h3>
+                <button class="danger">Logout</button>
+            </div>
+        </aside>
+        <section class="main">
+
+        </section>
+    </div>
+
+
+   
+
+</body>
+</html>
